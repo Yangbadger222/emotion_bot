@@ -31,6 +31,12 @@ yarn-error.log*
 # Logs
 *.log
 
+start_all.bat
+start_all.ps1
+start_server.bat
+start_server.ps1
+test_api.ps1
+
 # Environment files / secrets
 .env
 .env.local
