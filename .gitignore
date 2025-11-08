@@ -63,8 +63,3 @@ desktop.ini
 *.pem
 *.key
 
-# User-specified files to never upload
-INTEGRATION_GUIDE.md
-TECHNICAL_DETAILS.md
-TUTORIAL.md
-ai/README.md
