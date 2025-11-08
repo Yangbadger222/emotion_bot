@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 辅助聊天 + 情绪识别</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-row">
+          <div class="brand">
+            <!-- 小型 SVG 标志 -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="1" width="22" height="22" rx="6" fill="#0ea5b5" />
+              <path d="M6 12c1.5-3 6-3 7.5 0 1.5 3 1.5 3 3 3" stroke="#022155" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <h1>AI 辅助聊天 + 情绪识别</h1>
+          </div>
+
+          <div class="provider" role="region" aria-label="提供商和模型选择">
+            <label>
+              提供商：
+              <select id="provider">
+                <option value="openai">OpenAI</option>
+                <option value="azure">Azure OpenAI</option>
+                <option value="openrouter">OpenRouter</option>
+              </select>
+            </label>
+            <label>
+              模型：
+              <input id="model" placeholder="gpt-4o-mini 或 azure 部署名" aria-label="模型" />
+            </label>
+            <button id="clear" title="清空聊天记录">清空</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="chat" id="chat"></section>
+
+        <section class="compose">
+          <div class="emotion" id="emotion"></div>
+          <textarea id="input" rows="3" placeholder="输入消息，实时情绪识别... Ctrl+Enter 发送"></textarea>
+          <div class="actions">
+            <label>
+              <input type="checkbox" id="emotionMode" />
+              情感支持模式 (RAG + 心理知识库)
+            </label>
+            <label>温度 <input id="temperature" type="number" step="0.1" min="0" max="2" value="0.7" /></label>
+            <button id="send">发送</button>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <small>本页面不在浏览器保存任何密钥。请在服务器端配置 .env。情感支持模式使用 Python RAG 后端。</small>
+      </footer>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+  </html>
+
+
